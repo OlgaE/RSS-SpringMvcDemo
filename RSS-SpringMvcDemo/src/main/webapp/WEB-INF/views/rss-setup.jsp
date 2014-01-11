@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>RSS setup</title>
 </head>
 <body>
 
-	 <h2>Testing)</h2>
-     <h4><a href="to-test-page">Testing if deployed successfully.</a></h4>
-     <h4><a href="to-main-page">Main page</a></h4>
+	<form action="to-rss-page" method="get">
+		<input type="text" name="url" />
+		<input type="submit" name="submit" />
+	</form>
 </body>
 </html>

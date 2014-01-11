@@ -8,8 +8,6 @@
 </head>
 <body>
 
-	 <h2>Testing)</h2>
-     <h4><a href="to-test-page">Testing if deployed successfully.</a></h4>
-     <h4><a href="to-main-page">Main page</a></h4>
+	<h3>The url is ${url }</h3>
 </body>
 </html>
