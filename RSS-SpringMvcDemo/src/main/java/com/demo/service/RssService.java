@@ -1,6 +1,8 @@
 package com.demo.service;
 
+import java.util.List;
+
 public interface RssService {
 	
-	String readRSS(String url);
+	List<String> readRSS(String url);
 }
