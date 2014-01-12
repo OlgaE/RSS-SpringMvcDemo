@@ -1,5 +1,5 @@
 package com.demo.controllers;
-
+// http://rss.cnn.com/rss/edition.rss
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -18,7 +18,8 @@ import com.demo.model.Person;
 import com.demo.service.RssService;
 
 @Controller
-@SessionAttributes("rssFeed")
+//@SessionAttributes("rssFeed")
+@SessionAttributes("person")
 public class MainController {
 	
 	static Logger log = Logger.getLogger(MainController.class.getName());
@@ -52,15 +53,12 @@ public class MainController {
         return "rss-display";
     }
     
-    @RequestMapping(value = "/get-rss-object", method = RequestMethod.GET, produces="application/json")
+    @RequestMapping(value = "/get-person-object", method = RequestMethod.GET, produces="application/json; charset=utf-8")
     @ResponseBody
-    public List<String> getRSSPageJSON(@RequestParam("url") String url, Model model){
+    public Person getRSSPageJSON(@RequestParam("firstName") String firstName){
 
-        model.addAttribute("url", url);
-        
-        List<String> rssFeed = rssService.readRSS(url);
-        model.addAttribute("rssFeed", rssFeed);
-        return rssFeed;
+    	person.setFirstName(firstName);
+        return person;
     }
     
     @RequestMapping(value = "/to-test-page", method = RequestMethod.GET)

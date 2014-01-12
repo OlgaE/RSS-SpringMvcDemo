@@ -8,13 +8,15 @@
 </head>
 <body>
 
+	<h3>With redirection to another page:</h3>
 	<form action="to-rss-page" method="get">
 		<input type="text" name="url" />
 		<input type="submit" name="submit" />
 	</form>
 	
-	<form action="get-rss-object" method="get">
-		<input type="text" name="url" />
+	<h3>Getting a JSON object instead:</h3>
+	<form action="get-person-object" method="get">
+		<input type="text" name="firstName" />
 		<input type="submit" name="submit" />
 	</form>
 </body>
