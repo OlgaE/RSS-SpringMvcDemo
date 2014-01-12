@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.demo.model.Address;
@@ -49,6 +50,17 @@ public class MainController {
         List<String> rssFeed = rssService.readRSS(url);
         model.addAttribute("rssFeed", rssFeed);
         return "rss-display";
+    }
+    
+    @RequestMapping(value = "/get-rss-object", method = RequestMethod.GET, produces="application/json")
+    @ResponseBody
+    public List<String> getRSSPageJSON(@RequestParam("url") String url, Model model){
+
+        model.addAttribute("url", url);
+        
+        List<String> rssFeed = rssService.readRSS(url);
+        model.addAttribute("rssFeed", rssFeed);
+        return rssFeed;
     }
     
     @RequestMapping(value = "/to-test-page", method = RequestMethod.GET)

@@ -12,5 +12,10 @@
 		<input type="text" name="url" />
 		<input type="submit" name="submit" />
 	</form>
+	
+	<form action="get-rss-object" method="get">
+		<input type="text" name="url" />
+		<input type="submit" name="submit" />
+	</form>
 </body>
 </html>
